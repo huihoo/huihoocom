@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="huihoo-sso-ext" basedir="." default="deploy">
+	<import file="../build-common-ext.xml" />
+</project>

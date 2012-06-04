@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="huihoo-sso-ext">
+        <wb-resource deploy-path="/" source-path="/docroot/WEB-INF/ext-web/docroot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/ext-impl/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/ext-service/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/ext-util-bridges/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/ext-util-java/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/ext-util-taglib/src"/>
+        <property name="context-root" value="huihoo-sso-ext"/>
+        <property name="java-output-path" value="/huihoo-sso-ext/build/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="docroot/WEB-INF/ext-impl/classes" path="docroot/WEB-INF/ext-impl/src">
+		<attributes>
+			<attribute name="owner.project.facets" value="liferay.ext"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="docroot/WEB-INF/ext-service/classes" path="docroot/WEB-INF/ext-service/src">
+		<attributes>
+			<attribute name="owner.project.facets" value="liferay.ext"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="docroot/WEB-INF/ext-util-bridges/classes" path="docroot/WEB-INF/ext-util-bridges/src">
+		<attributes>
+			<attribute name="owner.project.facets" value="liferay.ext"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="docroot/WEB-INF/ext-util-java/classes" path="docroot/WEB-INF/ext-util-java/src">
+		<attributes>
+			<attribute name="owner.project.facets" value="liferay.ext"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="docroot/WEB-INF/ext-util-taglib/classes" path="docroot/WEB-INF/ext-util-taglib/src">
+		<attributes>
+			<attribute name="owner.project.facets" value="liferay.ext"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Liferay v6.1 CE (Tomcat 7) JRE">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.liferay.ide.eclipse.server.tomcat.runtimeClasspathProvider/Liferay v6.1 CE (Tomcat 7)">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="com.liferay.ide.eclipse.server.plugin.container/ext">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="docroot/WEB-INF/ext-lib/global/commons-httpclient-3.0.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/ext-lib/global/commons-io-2.0.1.jar"/>
+	<classpathentry kind="output" path="docroot/WEB-INF/ext-impl/classes"/>
+</classpath>
