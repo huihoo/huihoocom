@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder package-path="com.huihoo.social">
+	<author>Baihua Huang</author>
+	<namespace>social</namespace>
+	<entity name="Socialcontent" table="huihoo_app_socialcontent"
+		local-service="true" remote-service="false">
+		<column name="id" type="long" primary="true"></column>
+		<column name="userId" type="long"></column>
+		<column name="portraitUrl" type="String"></column>
+		<column name="screenName" type="String"></column>
+		<column name="companyId" type="long"></column>
+		<column name="groupId" type="long"></column>
+		<column name="type" type="int"></column>
+		<column name="content" type="String"></column>
+		<column name="createdAt" type="Date"></column>
+		<order>
+			<order-column name="createdAt" order-by="desc"></order-column>
+		</order>
+		<finder return-type="Collection" name="companyId">
+			<finder-column name="companyId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="groupId">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="companyIdAndGroupId">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+		</finder>
+	</entity>
+</service-builder>

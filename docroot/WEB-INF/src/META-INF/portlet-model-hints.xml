@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.huihoo.social.model.Socialcontent">
+		<field name="id" type="long" />
+		<field name="userId" type="long" />
+		<field name="portraitUrl" type="String" />
+		<field name="screenName" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="type" type="int" />
+		<field name="content" type="String" />
+		<field name="createdAt" type="Date" />
+	</model>
+</model-hints>

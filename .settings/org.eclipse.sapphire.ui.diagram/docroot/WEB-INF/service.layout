@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram-geometry>
+    <grid>
+        <visible>true</visible>
+    </grid>
+    <guides>
+        <visible>true</visible>
+    </guides>
+    <node>
+        <id>Entity#Socialcontent</id>
+        <bounds x="350" y="50"/>
+    </node>
+</diagram-geometry>
