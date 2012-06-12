@@ -29,6 +29,14 @@
      </div>
     </div>
     <c:if test="<%= ( themeDisplay.isSignedIn() ) %>">
+    	
+    	<%
+    		List<Socialcontent> lastSocial=SocialcontentLocalServiceUtil.getService().getUserLastSocialContent(user.getUserId());
+    		if(lastSocial!=null&&lastSocial.size()>0){
+    			pageContext.setAttribute("lastSocial", lastSocial.get(0));
+    		}
+    	%>
+    
     	<portlet:actionURL name="addContent" var="addContent"/>   
     	<aui:form action="<%= addContent.toString() %>" method="post" name="contentForm" id="contentForm">   
 	    	<!--- 登录后微博输入框  开始 -->
@@ -41,14 +49,18 @@
 		        <ul>
 		         <li class="bule"><a href="#">添加链接</a></li>
 		         <li class="in_min">
-		          <span class="ckbox"><input name="is_weibo" type="checkbox" value="1"></span>
+		          <span class="ckbox"><input name="is_weibo" type="checkbox" value="1" <c:if test="${!empty(requestScope.isWeibo)}">checked='checked'</c:if> ></span>
 		          <span class="ts_text">同步至新浪微博</span>
 		          <span class="wbimg"><img src="<%= themeDisplay.getPathThemeImages() + "/sina_min.jpg" %>"></span>
 		          </li>
 		          <li><input type="submit" value="发布"/></li>
 		        </ul>
 		      </div>
-		      <div class="wb_lasttime">最近发布：近日有媒体报道称，富士康会将内地员工的月薪翻番至4000元以上水平。这导致富士康部分工厂附近的房租闻声上涨。富士康今日回应称，集团会根据内地厂房所在地的物价水平调整员工薪酬，不过具体调整金额并未透露。</div>
+		     <c:if test="${pageScope.lastSocial!=null}">
+		      <div class="wb_lasttime">
+		      	最近发布：${sessionScope.USER_ID}&nbsp;&nbsp;${pageScope.lastSocial.content}	      	
+		      </div>
+		     </c:if>
 		     </div>
 		     <div class="clear"></div>
 		    </div>
@@ -63,7 +75,7 @@
      <c:forEach items="${pageScope.contents}" var="c">
 	     <div class="wblist">
 	      <div class="user"><img src="${c.portraitUrl}" width="50px" height="50px"></div>
-	      <div class="wbcontent"><span class="bule"><a href="#">${c.screenName}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;${c.content}<span class="bule"><a href="#" target="_blank" ;=""> http://mogujie.cn/00xtLU</a></span>
+	      <div class="wbcontent"><span class="bule"><a href="#">${c.screenName}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;${c.content}<span class="bule"></span>
 	       <div class="wbdate"><fmt:formatDate value="${c.createdAt}" pattern="MM月dd日 HH:mm"/> 来自新浪微博 </div>
 	      </div>
 	     </div>

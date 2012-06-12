@@ -281,6 +281,11 @@ public class SocialcontentLocalServiceWrapper
 		return _socialcontentLocalService.getSocialCount(companyId);
 	}
 
+	public java.util.List<com.huihoo.social.model.Socialcontent> getUserLastSocialContent(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return _socialcontentLocalService.getUserLastSocialContent(userId);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

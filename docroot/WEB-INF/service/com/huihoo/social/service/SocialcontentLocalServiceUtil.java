@@ -286,6 +286,11 @@ public class SocialcontentLocalServiceUtil {
 		return getService().getSocialCount(companyId);
 	}
 
+	public static java.util.List<com.huihoo.social.model.Socialcontent> getUserLastSocialContent(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getUserLastSocialContent(userId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

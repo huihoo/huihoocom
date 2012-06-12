@@ -17,6 +17,9 @@
 		<order>
 			<order-column name="createdAt" order-by="desc"></order-column>
 		</order>
+		<finder return-type="Collection" name="userId">
+			<finder-column name="userId"></finder-column>
+		</finder>
 		<finder return-type="Collection" name="companyId">
 			<finder-column name="companyId"></finder-column>
 		</finder>

@@ -1,14 +1,42 @@
+<%@page import="com.liferay.portal.kernel.util.ListUtil"%>
+<%@page import="com.huihoo.social.service.SocialcontentLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.huihoo.social.model.Socialcontent"%>
+<%@page import="java.util.List"%>
 <%@include file="/init.jsp" %>
+<liferay-ui:success key="socialContentDeleted" message="socialContentDeleted" />
+<liferay-ui:error  key="error-deleting" message="error-deleting" />
+<liferay-ui:search-container emptyResultsMessage="there-are-no-registrations" delta="5">
+  <liferay-ui:search-container-results>
+  <%
+  List<Socialcontent> tempResults = SocialcontentLocalServiceUtil.getService().getSocialcontents(0, 30);
+  results=ListUtil.subList(tempResults, searchContainer.getStart(), searchContainer.getEnd());;
+  pageContext.setAttribute("results", results);
+  pageContext.setAttribute("total", tempResults.size());
+  %>
+  </liferay-ui:search-container-results>
 
-<portlet:actionURL name="addName" var="addNameURL"/>    
+  <liferay-ui:search-container-row
+      className="com.huihoo.social.model.Socialcontent"
+      keyProperty="id"
+      modelVar="socialContent">
+ <liferay-ui:search-container-column-text
+        name="id"
+        property="id" />
+    <liferay-ui:search-container-column-text
+        name="user-name"
+        property="screenName" />
+    <liferay-ui:search-container-column-text
+        name="content"
+        property="content" />
+    <liferay-ui:search-container-column-text
+        name="created-at"
+        property="createdAt" />
+    <liferay-ui:search-container-column-jsp
+    	path="/social/admin_actions.jsp"
+    	align="right" />    
+  </liferay-ui:search-container-row>
 
-<form id="<portlet:namespace />helloForm" action="<%=addNameURL.toString()%>"
-	method="post">
-	<table>
-		<tr>
-			<td>Name:</td>
-			<td><input type="text" name="username"></td>
-		</tr>
-	</table>
-	<input type="submit" id="nameButton" title="Add Name" value="Add Name">
-</form>
+  <liferay-ui:search-iterator />
+
+</liferay-ui:search-container>

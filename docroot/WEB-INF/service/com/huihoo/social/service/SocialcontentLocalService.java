@@ -251,4 +251,8 @@ public interface SocialcontentLocalService extends PersistedModelLocalService {
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getSocialCount(long companyId)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.huihoo.social.model.Socialcontent> getUserLastSocialContent(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException;
 }

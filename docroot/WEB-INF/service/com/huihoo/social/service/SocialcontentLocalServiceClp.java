@@ -100,6 +100,9 @@ public class SocialcontentLocalServiceClp implements SocialcontentLocalService {
 
 		_getSocialCountMethodKey20 = new MethodKey(_classLoaderProxy.getClassName(),
 				"getSocialCount", long.class);
+
+		_getUserLastSocialContentMethodKey21 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getUserLastSocialContent", long.class);
 	}
 
 	public com.huihoo.social.model.Socialcontent addSocialcontent(
@@ -686,6 +689,33 @@ public class SocialcontentLocalServiceClp implements SocialcontentLocalService {
 		return ((Integer)returnObj).intValue();
 	}
 
+	public java.util.List<com.huihoo.social.model.Socialcontent> getUserLastSocialContent(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getUserLastSocialContentMethodKey21,
+				userId);
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.huihoo.social.model.Socialcontent>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	public ClassLoaderProxy getClassLoaderProxy() {
 		return _classLoaderProxy;
 	}
@@ -712,4 +742,5 @@ public class SocialcontentLocalServiceClp implements SocialcontentLocalService {
 	private MethodKey _addSocialContentMethodKey18;
 	private MethodKey _getSocialContentMethodKey19;
 	private MethodKey _getSocialCountMethodKey20;
+	private MethodKey _getUserLastSocialContentMethodKey21;
 }

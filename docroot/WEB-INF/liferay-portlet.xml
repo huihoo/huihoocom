@@ -6,9 +6,10 @@
 		<portlet-name>huihoo</portlet-name>
 		<icon>/icon.png</icon>
 		<instanceable>false</instanceable>
+		<private-session-attributes>true</private-session-attributes>	
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
-		<css-class-wrapper>huihoo-portlet</css-class-wrapper>		
+		<css-class-wrapper>huihoo-portlet</css-class-wrapper>			
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

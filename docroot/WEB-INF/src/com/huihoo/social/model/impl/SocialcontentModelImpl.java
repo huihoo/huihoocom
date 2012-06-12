@@ -88,6 +88,7 @@ public class SocialcontentModelImpl extends BaseModelImpl<Socialcontent>
 			true);
 	public static long COMPANYID_COLUMN_BITMASK = 1L;
 	public static long GROUPID_COLUMN_BITMASK = 2L;
+	public static long USERID_COLUMN_BITMASK = 4L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.com.huihoo.social.model.Socialcontent"));
 
@@ -131,6 +132,14 @@ public class SocialcontentModelImpl extends BaseModelImpl<Socialcontent>
 	}
 
 	public void setUserId(long userId) {
+		_columnBitmask |= USERID_COLUMN_BITMASK;
+
+		if (!_setOriginalUserId) {
+			_setOriginalUserId = true;
+
+			_originalUserId = _userId;
+		}
+
 		_userId = userId;
 	}
 
@@ -140,6 +149,10 @@ public class SocialcontentModelImpl extends BaseModelImpl<Socialcontent>
 
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
+	}
+
+	public long getOriginalUserId() {
+		return _originalUserId;
 	}
 
 	public String getPortraitUrl() {
@@ -336,6 +349,10 @@ public class SocialcontentModelImpl extends BaseModelImpl<Socialcontent>
 	public void resetOriginalValues() {
 		SocialcontentModelImpl socialcontentModelImpl = this;
 
+		socialcontentModelImpl._originalUserId = socialcontentModelImpl._userId;
+
+		socialcontentModelImpl._setOriginalUserId = false;
+
 		socialcontentModelImpl._originalCompanyId = socialcontentModelImpl._companyId;
 
 		socialcontentModelImpl._setOriginalCompanyId = false;
@@ -480,6 +497,8 @@ public class SocialcontentModelImpl extends BaseModelImpl<Socialcontent>
 	private long _id;
 	private long _userId;
 	private String _userUuid;
+	private long _originalUserId;
+	private boolean _setOriginalUserId;
 	private String _portraitUrl;
 	private String _screenName;
 	private long _companyId;

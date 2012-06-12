@@ -110,4 +110,9 @@ public class SocialcontentLocalServiceImpl extends
 		return socialcontentPersistence.countBycompanyId(companyId);
 	}
 
+	public List<Socialcontent> getUserLastSocialContent(long userId)
+			throws SystemException {
+		return socialcontentPersistence.findByuserId(userId, 0, 1);
+	}
+
 }

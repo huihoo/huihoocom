@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource-action-mapping>
+	<portlet-resource>
+		<portlet-name>huihoo-social</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_PRODUCT</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<community-defaults>
+				<action-key>VIEW</action-key>
+			</community-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+
+			<guest-unsupported>
+				<action-key>ADD_PRODUCT</action-key>
+			</guest-unsupported>
+		</permissions>
+	</portlet-resource>
+
+	<model-resource>
+		<model-name>
+			com.huihoo.social.model.Socialcontent
+		</model-name>
+		<portlet-ref>
+			<portlet-name>huihoo-social</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>DELETE</action-key>
+				<action-key>PERMISSIONS</action-key>
+				<action-key>UPDATE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<community-defaults>
+				<action-key>VIEW</action-key>
+			</community-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>UPDATE</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	
+</resource-action-mapping>
