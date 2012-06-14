@@ -33,12 +33,17 @@ public class SocialContentPortlet extends MVCPortlet {
 
 	public void addContent(ActionRequest request, ActionResponse response)
 			throws Exception {
+		String content = request.getParameter("content");
+		if(Validator.isNull(content)||content.trim().length()<=0){
+			SessionErrors.add(request, "content-must-required");
+			return ;
+		}
 		ThemeDisplay themeDisplay = (ThemeDisplay) request
 				.getAttribute(WebKeys.THEME_DISPLAY);
 		User user = themeDisplay.getUser();
 		PortletPreferences prefs = request.getPreferences();
 		String type = request.getParameter("type");
-		String content = request.getParameter("content");
+		
 		String isWeibo = request.getParameter("is_weibo");
 		request.setAttribute("isWeibo", isWeibo);
 		HttpSession httpSession = PortalUtil.getHttpServletRequest(request)
@@ -92,9 +97,9 @@ public class SocialContentPortlet extends MVCPortlet {
 
 	public void list(ActionRequest request, ActionResponse response)
 			throws Exception {
-		String pageNo = request.getParameter("page");
-		request.setAttribute("page", pageNo);
-		response.setRenderParameter("jspPage", "/social/view.jsp");
+		String pageNo = request.getParameter("page");		
+		request.setAttribute("page", Integer.valueOf(pageNo));
+		//response.setRenderParameter("jspPage", "/jsp/social/view.jsp");
 	}
 
 	public void deleteSocialContent(ActionRequest request,
@@ -107,6 +112,13 @@ public class SocialContentPortlet extends MVCPortlet {
 		} else {
 			SessionErrors.add(request, "error-deleting");
 		}
+	}
+	
+	public void clearCache(ActionRequest request,
+			ActionResponse response)throws Exception{
+		HttpSession httpSession = PortalUtil.getHttpServletRequest(request).getSession();
+		httpSession.getServletContext().removeAttribute("topItems");
+		SessionMessages.add(request, "cache-refresh-successfully");
 	}
 
 	private static Log _log = LogFactory.getLog(SocialContentPortlet.class);

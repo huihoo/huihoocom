@@ -20,5 +20,8 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jstl-api.jar"/>
 	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jstl-impl.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/horrorss-2.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/sparta.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jsoup-1.6.1.jar"/>
 	<classpathentry kind="output" path="docroot/WEB-INF/classes"/>
 </classpath>

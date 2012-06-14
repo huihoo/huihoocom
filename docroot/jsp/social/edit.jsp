@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <%@page import="com.liferay.portal.kernel.util.ListUtil"%>
 <%@page import="com.huihoo.social.service.SocialcontentLocalServiceUtil"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,7 +16,9 @@
   pageContext.setAttribute("total", tempResults.size());
   %>
   </liferay-ui:search-container-results>
-
+<portlet:actionURL name="clearCache" var="clearCache"/> 
+<liferay-ui:success key="cache-refresh-successfully" message="cache-refresh-successfully" /> 
+<a href="<%=clearCache%>">刷新内容缓存</a>
   <liferay-ui:search-container-row
       className="com.huihoo.social.model.Socialcontent"
       keyProperty="id"
@@ -33,7 +36,7 @@
         name="created-at"
         property="createdAt" />
     <liferay-ui:search-container-column-jsp
-    	path="/social/admin_actions.jsp"
+    	path="/jsp/social/admin_actions.jsp"
     	align="right" />    
   </liferay-ui:search-container-row>
 

@@ -11,6 +11,16 @@
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
 		<css-class-wrapper>huihoo-portlet</css-class-wrapper>			
 	</portlet>
+	<portlet>
+		<portlet-name>blogdocprojectportlet</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>false</instanceable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-javascript>/js/jquery-1.7.2.min.js</header-portlet-javascript>		
+		<css-class-wrapper>
+			blogdocprojectportlet-portlet
+		</css-class-wrapper>
+	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

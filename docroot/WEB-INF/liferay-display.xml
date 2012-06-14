@@ -4,5 +4,6 @@
 <display>
 	<category name="Huihoo Portlet">
 		<portlet id="huihoo-social" />
+		<portlet id="blogdocprojectportlet"></portlet>
 	</category>
 </display>

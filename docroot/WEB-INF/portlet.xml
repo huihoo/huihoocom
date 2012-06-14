@@ -10,11 +10,11 @@
 		<portlet-class>com.huihoo.portlet.SocialContentPortlet</portlet-class>
 		<init-param>
 			<name>edit-jsp</name>
-			<value>/social/edit.jsp</value>
+			<value>/jsp/social/edit.jsp</value>
 		</init-param>
 		<init-param>
 			<name>view-jsp</name>
-			<value>/social/view.jsp</value>
+			<value>/jsp/social/view.jsp</value>
 		</init-param>
 		<init-param>
 			<name>add-process-action-success-action</name>
@@ -31,6 +31,44 @@
 			<title>huihoo-social</title>
 			<short-title>huihoo-social</short-title>
 			<keywords>huihoo social</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>blogdocprojectportlet</portlet-name>
+		<display-name>BlogDocProjectPortlet</display-name>
+		<portlet-class>
+			com.huihoo.portlet.BlogDocProjectPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/jsp/blogdocprojectportlet/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/jsp/blogdocprojectportlet/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>BlogDocProjectPortlet</title>
+			<short-title>BlogDocProjectPortlet</short-title>
+			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
